@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const ServiceDetails = () => {
+    const { user } = useContext(AuthContext);
     const data = useLoaderData();
     const { id } = useParams();
     const [details, setDetails] = useState({});
@@ -21,7 +23,12 @@ const ServiceDetails = () => {
         if (feedback.trim() === '') {
             return;
         }
-        setComments([...comments, feedback]);
+
+        const newComment = {
+            name: user?.displayName,
+            text: feedback,
+        }
+        setComments([...comments, newComment]);
         setFeedback("");
     }
 
@@ -56,7 +63,12 @@ const ServiceDetails = () => {
                         <ul className="max-w-2xl">
                             {
                                 comments.map((comment, idx) => (
-                                    <li className="break-words max-w-full overflow-auto bg-base-300 p-3 rounded-xl rounded-tl-none mb-1.5" key={idx}>{comment}</li>
+
+                                    <li className="" key={idx}>
+                                        
+                                        <h2 className="font-semibold text-xl mb-1">{comment.name}</h2>
+                                        <p className="break-words max-w-full overflow-auto bg-base-300   p-3 rounded-xl rounded-tl-none mb-1.5">{comment.text}</p>
+                                    </li>
                                 ))
                             }
                         </ul>
