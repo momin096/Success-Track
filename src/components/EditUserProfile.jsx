@@ -31,7 +31,8 @@ const EditUserProfile = () => {
     }
 
     return (
-        <div className="min-h-[calc(100vh-142px)] flex items-center justify-center">
+        <div className="min-h-[calc(100vh-142px)] flex flex-col items-center justify-center">
+            <h2 className="text-4xl mb-10 font-medium">Update Your Profile</h2>
             <form onSubmit={handleSubmit} className="space-y-5">
                 <label className="input input-bordered flex items-center gap-2">
                     Name

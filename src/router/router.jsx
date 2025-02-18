@@ -10,6 +10,7 @@ import ResetPassword from "../pages/ResetPassword";
 import UserProfile from "../pages/UserProfile";
 import EditUserProfile from "../components/EditUserProfile";
 import Profile from "../components/Profile";
+import Appointment from "../pages/Appointment";
 
 
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/appointment',
+                element: <Appointment />
             },
             {
                 path: '/profile',
