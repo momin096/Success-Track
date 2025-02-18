@@ -7,3 +7,7 @@
 .font-noto {
   font-family: "Noto Sans Mono", serif;
 }
+
+.active {
+  background-color: antiquewhite;
+}

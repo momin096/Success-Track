@@ -24,7 +24,7 @@ const Appointment = () => {
                         </div>
                         <div className="flex items-center space-x-3">
                             <span className="text-primary"><i className="fas fa-phone"></i></span>
-                            <span>+880 1234-500000</span>
+                            <span>+880 1567-500000</span>
                         </div>
                     </div>
                 </div>
