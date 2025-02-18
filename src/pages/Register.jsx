@@ -1,12 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createNewUserWithEmail, createNewUserWithGoogle, setUser,updateUserProfile } = useContext(AuthContext);
-
+    const { createNewUserWithEmail, createNewUserWithGoogle, setUser, updateUserProfile } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [pass, setPass] = useState(false);
     const navigate = useNavigate();
+
+    const handleShowPassword = () =>{
+        setPass(!pass);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,23 +24,33 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
 
+        setError('')
+
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            setError('Your password Must have One UPPERCASE,one lowercase,at least 6 character');
+            return;
+        }
+
         createNewUserWithEmail(email, password)
             .then(result => {
                 const user = result.user;
                 setUser(user);
-                updateUserProfile({displayName: name, photoURL: photo})
-                .then(result =>{
-                    navigate('/')
-                })
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(result => {
+                        navigate('/')
+                    })
             })
-            .catch(error => console.log(error.code))
+            .catch(error => setError(error.message))
     }
 
     const handleGoogleSignIn = () => {
         createNewUserWithGoogle()
-        .then(result =>{
-            navigate('/')
-        })
+            .then(result => {
+                navigate('/')
+            })
+            .catch(error => setError(error.message))
     }
 
     return (
@@ -58,10 +75,20 @@ const Register = () => {
 
                                 <label className="fieldset-label">Email</label>
                                 <input name="email" type="email" className="input" placeholder="Email" />
-                                <label className="fieldset-label">Password</label>
-                                <input name="password" type="password" className="input" placeholder="Password" />
-                                <button className="btn btn-neutral mt-4">Register</button>
+                                <div className="relative">
+                                    <label className="fieldset-label">Password</label>
+                                    <input name="password" type={pass ? 'text' : 'password' } className="input" placeholder="Password" />
 
+                                    <span className="absolute right-2 bottom-2.5" onClick={handleShowPassword}>
+                                        {
+                                            pass ?  <FaEye className="text-xl" /> :<FaEyeSlash className="text-xl" />
+                                        }
+                                    </span>
+                                </div>
+                                <button className="btn btn-neutral mt-4">Register</button>
+                                {
+                                    error && <p className="text-red-500">{error}</p>
+                                }
                                 <p className="py-2">Already have an account? <Link className="text-red-500" to='/login' >Login</Link></p>
 
                                 <button onClick={handleGoogleSignIn} className="flex  btn items-center justify-center gap-2"><FcGoogle className="text-xl" />Continue with Google</button>

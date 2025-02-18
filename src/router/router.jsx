@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../pages/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage";
+import ResetPassword from "../pages/ResetPassword";
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/login/reset-password',
+                element: <ResetPassword />,
             },
             {
                 path: '/register',
