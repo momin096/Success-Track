@@ -7,6 +7,9 @@ import Register from "../pages/Register";
 import PrivateRoute from "../pages/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage";
 import ResetPassword from "../pages/ResetPassword";
+import UserProfile from "../pages/UserProfile";
+import EditUserProfile from "../components/EditUserProfile";
+import Profile from "../components/Profile";
 
 
 
@@ -39,6 +42,26 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/profile',
+                element: <PrivateRoute>
+                    <Profile />,
+                </PrivateRoute>,
+                children: [
+                    {
+                        path: '/profile',
+                        element: <PrivateRoute>
+                            <UserProfile />
+                        </PrivateRoute>,
+                    },
+                    {
+                        path: '/profile/edit-profile',
+                        element: <PrivateRoute>
+                            <EditUserProfile />
+                        </PrivateRoute>
+                    }
+                ]
             }
         ]
     }

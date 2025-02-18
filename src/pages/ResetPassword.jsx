@@ -12,8 +12,13 @@ const ResetPassword = () => {
         setSuccess(null);
         setError(null);
         forgetPassword(email)
-        .then((result) =>{
-            setSuccess('Check you mail')
+        .then(() =>{
+            setSuccess('Check you mail');
+
+            setTimeout(() => {
+                // window.location.href = 'https://mail.google.com/mail/u/0/#inbox';
+                window.open("https://mail.google.com/mail/u/0/#inbox" , "_blank")
+            }, 1000);
         })
         .catch(error =>{
             setError(error.code);

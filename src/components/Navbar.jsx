@@ -47,15 +47,17 @@ const Navbar = () => {
                     {
                         user ? (
                             <div className="flex flex-row gap-5">
-                                <img 
-                                    className="rounded-full w-10 object-cover"
-                                    alt={user?.displayName}
-                                    src={user?.photoURL}
-                                    title={user?.displayName}
+                                <Link to={'/profile'}>
+                                    <img
+                                        className="rounded-full w-10 object-cover"
+                                        alt={user?.displayName}
+                                        src={user?.photoURL}
+                                        title={user?.displayName}
                                     />
+                                </Link>
                                 <a onClick={handleSignOut} className="btn">Log Out</a>
-                            </div>) 
-                            : <Link to='/login'  className="btn">Log In</Link>
+                            </div>)
+                            : <Link to='/login' className="btn">Log In</Link>
                     }
 
 
