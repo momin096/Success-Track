@@ -1,8 +1,14 @@
-# React + Vite
+# Success Track
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Succestrack is a career counseling website designed to help individuals find the right career path. It provides guidance, resources, and insights to assist users in making informed career decisions. The platform likely includes features such as career assessments, job recommendations, and educational resources to help users track and achieve their professional goals. 
 
-Currently, two official plugins are available:
+# Technology Used
+- React.js 
+- React Router
+- Tailwind CSS
+- Netlify
+- Firebase 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Live Site 
+
+https://success-track.netlify.app/
