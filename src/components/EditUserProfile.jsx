@@ -31,22 +31,22 @@ const EditUserProfile = () => {
     }
 
     return (
-        <div className="min-h-[calc(100vh-142px)]">
-            <form onSubmit={handleSubmit} action="">
+        <div className="min-h-[calc(100vh-142px)] flex items-center justify-center">
+            <form onSubmit={handleSubmit} className="space-y-5">
                 <label className="input input-bordered flex items-center gap-2">
                     Name
-                    <input name="name" type="text" className="grow" placeholder={user.displayName} />
+                    <input name="name" type="text" className="grow input-lg" placeholder={user.displayName} />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                     Email
-                    <input name="email" type="text" className="grow" placeholder={user.email} />
+                    <input name="email" type="text" className="grow " placeholder={user.email} />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                     PhotoURL
                     <input name="photo" type="text" className="grow" placeholder={user.photoURL} />
                 </label>
 
-                <button className="btn">Update</button>
+                <button className="btn w-full">Update</button>
             </form>
         </div>
     );

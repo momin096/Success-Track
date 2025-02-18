@@ -3,7 +3,7 @@ import { MdPlayArrow } from "react-icons/md";
 
 const SuccessProcess = () => {
     return (
-        <div className="flex justify-between items-center gap-10 bg-base-200 px-2 py-10 my-20 rounded-xl">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-10 bg-base-200 px-2 py-10 my-20 rounded-xl">
             <div className="flex-1">
                 <h2 className="text-5xl font-semibold mb-5">Step by step process for achieving success</h2>
                 <ul className="text-xl">

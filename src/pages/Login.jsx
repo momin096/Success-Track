@@ -35,7 +35,7 @@ const Login = () => {
 
     const signInWithGoogle = () => {
         createNewUserWithGoogle()
-            .then(result => {
+            .then(() => {
                 navigate(location?.state ? location.state : '/')
             })
     }
@@ -43,7 +43,7 @@ const Login = () => {
         <div>
             <div className="hero bg-base-200 min-h-[calc(100vh-142px)] ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left w-1/2">
+                    <div className="text-center lg:text-left md:w-1/2">
                         <h1 className="text-5xl font-bold">Login now!</h1>
                         <p className="py-6">
                             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem

@@ -38,7 +38,7 @@ const Register = () => {
                 const user = result.user;
                 setUser(user);
                 updateUserProfile({ displayName: name, photoURL: photo })
-                    .then(result => {
+                    .then(() => {
                         navigate('/')
                     })
             })
@@ -47,7 +47,7 @@ const Register = () => {
 
     const handleGoogleSignIn = () => {
         createNewUserWithGoogle()
-            .then(result => {
+            .then(() => {
                 navigate('/')
             })
             .catch(error => setError(error.message))
@@ -55,9 +55,9 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero bg-base-200 min-h-[calc(100vh-65px)]">
+            <div className="hero bg-base-200 min-h-[calc(100vh-142px)] ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <div className="text-center lg:text-left w-1/2">
+                    <div className="text-center lg:text-left md:w-1/2">
                         <h1 className="text-5xl font-bold">Register now!</h1>
                         <p className="py-6">
                             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem

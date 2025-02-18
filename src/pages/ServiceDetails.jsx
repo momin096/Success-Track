@@ -34,7 +34,7 @@ const ServiceDetails = () => {
 
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto mb-5 min-h-[calc(100vh-162px)] ">
             <div className="hero bg-base-200  flex flex-col md:flex-row gap-10 p-10">
                 <div className="flex-1">
                     <img className="rounded-lg" src={image} alt="" />
@@ -54,7 +54,7 @@ const ServiceDetails = () => {
 
             {/* Comment / Feedback section */}
 
-            <div className="flex mt-10 justify-between ">
+            <div className="flex flex-col md:flex-row p-5 justify-between my-5">
                 <div className="flex-1">
                     <h2 className="text-3xl font-semibold">Feedbacks</h2>
 
@@ -63,9 +63,7 @@ const ServiceDetails = () => {
                         <ul className="max-w-2xl">
                             {
                                 comments.map((comment, idx) => (
-
                                     <li className="" key={idx}>
-                                        
                                         <h2 className="font-semibold text-xl mb-1">{comment.name}</h2>
                                         <p className="break-words max-w-full overflow-auto bg-base-300   p-3 rounded-xl rounded-tl-none mb-1.5">{comment.text}</p>
                                     </li>
@@ -82,7 +80,7 @@ const ServiceDetails = () => {
                         </div>
                         <input
                             onChange={(e) => setFeedback(e.target.value)}
-                            value={feedback} name="feedback" type="text" placeholder="Type here" className="input w-md" />
+                            value={feedback} name="feedback" type="text" placeholder="Type here" className="input w-full" />
                         <button className="btn">Feedback</button>
                     </form>
                 </div>

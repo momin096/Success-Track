@@ -10,11 +10,11 @@ const Slider = () => {
         <Swiper
             spaceBetween={50}
             slidesPerView={1}
-            onSlideChange={() => console.log('')}
-            onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('')}
+            // onSwiper={(swiper) => console.log(swiper)}
         >
             <SwiperSlide className='min-h-[calc(100vh-65px)] '>
-                <div className='flex items-center p-5 gap-10'>
+                <div className='flex items-center p-5 gap-10 flex-col md:flex-row'>
                     <div className='flex-1 space-y-5'>
                         <h3 className='text-4xl font-semibold'>Achieve Your Goals</h3>
                         <p>Turn your dreams into reality with structured planning and discipline. Track your progress and stay motivated!</p>
@@ -26,7 +26,7 @@ const Slider = () => {
 
             </SwiperSlide>
             <SwiperSlide className='h-screen  '>
-                <div className='flex items-center p-5 gap-10 flex-row-reverse'>
+                <div className='flex items-center p-5 gap-10 md:flex-row-reverse flex-col-reverse'>
                     <div className='flex-1 space-y-5'>
                         <h3 className='text-4xl font-semibold'>Stay Consistent</h3>
                         <p>Consistency is the key to success. Develop habits that keep you moving forward every day!"
@@ -38,7 +38,7 @@ const Slider = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide className='h-screen '>
-                <div className='flex items-center p-5 gap-10'>
+                <div className='flex items-center p-5 gap-10 flex-col md:flex-row'>
                     <div className='flex-1 space-y-5'>
                         <h2 className='text-4xl font-semibold'>Overcome Challenges</h2>
                         <p>Success comes from overcoming obstacles. Stay strong, stay focused, and keep going!"
@@ -50,7 +50,7 @@ const Slider = () => {
                 </div>
             </SwiperSlide>
             <SwiperSlide className='h-screen '>
-                <div className='flex items-center p-5 gap-10 flex-row-reverse'>
+                <div className='flex items-center p-5 gap-10 md:flex-row-reverse flex-col-reverse'>
                     <div className='flex-1 space-y-5'>
                         <h3 className='text-4xl font-semibold'>Celebrate Your Wins</h3>
                         <p>Every step forward is a success! Celebrate your achievements and use them as fuel for your next challenge.</p>

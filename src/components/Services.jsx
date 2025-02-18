@@ -14,10 +14,9 @@ const Services = ({ service }) => {
                 </figure>
                 <div className="card-body pl-2">
                     <p className="text-xl font-semibold">{counselor}</p>
-                    <h2 className="text-lg">
-                        {service_name}
-                        <div className="badge text-black bg-[#79D7BE] ml-2">{category}</div>
-                    </h2>
+                    <h2 className="text-lg">{service_name}</h2>
+                    <p className="badge text-black bg-[#79D7BE]">{category}</p>
+
                     <p className="font-semibold">Price: ${pricing}</p>
                     <div className="">
                         <Link to={`/services/${id}`} className="badge btn badge-outline">Learn More</Link>
